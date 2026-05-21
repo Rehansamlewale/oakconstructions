@@ -153,6 +153,13 @@ const ProjectsAdmin = () => {
               <span className="text-[10px] font-black tracking-widest text-gray-400 uppercase">OR</span>
               <input type="url" placeholder="Paste Direct Avatar Image URL" value={typeof formData.clientImage === 'string' ? formData.clientImage : ''} onChange={e => setFormData({...formData, clientImage: e.target.value})} className="px-5 py-3 bg-white rounded-lg w-full text-sm font-medium focus:outline-none border border-gray-100" />
             </div>
+            {formData.clientImage && typeof formData.clientImage === 'string' && (
+              <div className="mt-4">
+                <a href={formData.clientImage} target="_blank" rel="noopener noreferrer" className="block w-20 h-20 rounded-full overflow-hidden border-2 border-luxury-gold/30 hover:border-luxury-gold transition-all">
+                  <img src={formData.clientImage} alt="Client avatar preview" className="w-full h-full object-cover" />
+                </a>
+              </div>
+            )}
           </div>
 
           <textarea placeholder="Description" value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})} className="px-5 py-4 bg-[#FDFBF7] rounded-xl w-full md:col-span-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-luxury-gold/50 transition-all" rows="4" />
@@ -164,6 +171,13 @@ const ProjectsAdmin = () => {
               <span className="text-[10px] font-black tracking-widest text-gray-400 uppercase">OR</span>
               <input type="url" placeholder="Paste Direct Image URL" value={typeof formData.image === 'string' ? formData.image : ''} onChange={e => setFormData({...formData, image: e.target.value})} className="px-5 py-3 bg-white rounded-lg w-full text-sm font-medium focus:outline-none border border-gray-100" />
             </div>
+            {formData.image && typeof formData.image === 'string' && (
+              <div className="mt-4">
+                <a href={formData.image} target="_blank" rel="noopener noreferrer" className="block w-32 h-32 rounded-xl overflow-hidden border-2 border-luxury-gold/30 hover:border-luxury-gold transition-all">
+                  <img src={formData.image} alt="Main image preview" className="w-full h-full object-cover" />
+                </a>
+              </div>
+            )}
           </div>
 
           <div className="bg-[#FDFBF7] p-5 rounded-xl border border-gray-100">
@@ -172,6 +186,13 @@ const ProjectsAdmin = () => {
               <input type="file" onChange={e => setFormData({...formData, extraImage1: e.target.files[0]})} className="w-full text-sm font-medium file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-[9px] file:font-black file:uppercase file:tracking-widest file:bg-charcoal file:text-white hover:file:bg-black cursor-pointer" accept="image/*" />
               <input type="url" placeholder="Paste Direct Image URL" value={typeof formData.extraImage1 === 'string' ? formData.extraImage1 : ''} onChange={e => setFormData({...formData, extraImage1: e.target.value})} className="px-4 py-2 bg-white rounded-lg w-full text-xs font-medium focus:outline-none border border-gray-100" />
             </div>
+            {formData.extraImage1 && typeof formData.extraImage1 === 'string' && (
+              <div className="mt-3">
+                <a href={formData.extraImage1} target="_blank" rel="noopener noreferrer" className="block w-24 h-24 rounded-lg overflow-hidden border-2 border-luxury-gold/30 hover:border-luxury-gold transition-all">
+                  <img src={formData.extraImage1} alt="Additional image 1 preview" className="w-full h-full object-cover" />
+                </a>
+              </div>
+            )}
           </div>
 
           <div className="bg-[#FDFBF7] p-5 rounded-xl border border-gray-100">
@@ -180,6 +201,13 @@ const ProjectsAdmin = () => {
               <input type="file" onChange={e => setFormData({...formData, extraImage2: e.target.files[0]})} className="w-full text-sm font-medium file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-[9px] file:font-black file:uppercase file:tracking-widest file:bg-charcoal file:text-white hover:file:bg-black cursor-pointer" accept="image/*" />
               <input type="url" placeholder="Paste Direct Image URL" value={typeof formData.extraImage2 === 'string' ? formData.extraImage2 : ''} onChange={e => setFormData({...formData, extraImage2: e.target.value})} className="px-4 py-2 bg-white rounded-lg w-full text-xs font-medium focus:outline-none border border-gray-100" />
             </div>
+            {formData.extraImage2 && typeof formData.extraImage2 === 'string' && (
+              <div className="mt-3">
+                <a href={formData.extraImage2} target="_blank" rel="noopener noreferrer" className="block w-24 h-24 rounded-lg overflow-hidden border-2 border-luxury-gold/30 hover:border-luxury-gold transition-all">
+                  <img src={formData.extraImage2} alt="Additional image 2 preview" className="w-full h-full object-cover" />
+                </a>
+              </div>
+            )}
           </div>
 
           <div className="bg-[#FDFBF7] p-5 rounded-xl border border-gray-100 md:col-span-2">
@@ -188,6 +216,13 @@ const ProjectsAdmin = () => {
               <input type="file" onChange={e => setFormData({...formData, extraImage3: e.target.files[0]})} className="w-full text-sm font-medium file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-[9px] file:font-black file:uppercase file:tracking-widest file:bg-charcoal file:text-white hover:file:bg-black cursor-pointer" accept="image/*" />
               <input type="url" placeholder="Paste Direct Image URL" value={typeof formData.extraImage3 === 'string' ? formData.extraImage3 : ''} onChange={e => setFormData({...formData, extraImage3: e.target.value})} className="px-4 py-2 bg-white rounded-lg w-full text-xs font-medium focus:outline-none border border-gray-100" />
             </div>
+            {formData.extraImage3 && typeof formData.extraImage3 === 'string' && (
+              <div className="mt-3">
+                <a href={formData.extraImage3} target="_blank" rel="noopener noreferrer" className="block w-24 h-24 rounded-lg overflow-hidden border-2 border-luxury-gold/30 hover:border-luxury-gold transition-all">
+                  <img src={formData.extraImage3} alt="Additional image 3 preview" className="w-full h-full object-cover" />
+                </a>
+              </div>
+            )}
           </div>
         </div>
         <div className="flex gap-4 pt-2">

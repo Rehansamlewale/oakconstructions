@@ -22,6 +22,7 @@ const ProjectDetails = () => {
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
   const [activeImage, setActiveImage] = useState(null);
+  const [showClientModal, setShowClientModal] = useState(false);
 
   const handleShare = async () => {
     const shareData = {
@@ -101,6 +102,76 @@ const ProjectDetails = () => {
   return (
     <div className="min-h-screen bg-[#FDFBF7] selection:bg-luxury-gold selection:text-white flex flex-col">
       
+      {/* Client Image Modal */}
+      {showClientModal && project.clientImage && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setShowClientModal(false)}
+          className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
+        >
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            onClick={(e) => e.stopPropagation()}
+            className="relative bg-white rounded-[2rem] p-6 md:p-8 max-w-2xl w-full shadow-2xl"
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setShowClientModal(false)}
+              className="absolute top-4 right-4 w-10 h-10 rounded-full bg-charcoal/10 hover:bg-charcoal hover:text-white flex items-center justify-center transition-all z-10"
+            >
+              <HiX className="text-xl" />
+            </button>
+
+            {/* Modal Content */}
+            <div className="space-y-6">
+              <div className="text-center space-y-2">
+                <span className="text-luxury-gold font-black tracking-[0.4em] uppercase text-[10px] block">
+                  Client Profile
+                </span>
+                <h3 className="text-2xl md:text-3xl font-black text-charcoal tracking-tight">
+                  {project.owner || 'Client'}
+                </h3>
+              </div>
+
+              {/* Large Client Image */}
+              <div className="relative w-full aspect-square max-w-md mx-auto rounded-[2rem] overflow-hidden shadow-luxury border-2 border-luxury-gold/20">
+                <img 
+                  src={project.clientImage} 
+                  alt={project.owner} 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Additional Info */}
+              <div className="bg-[#FDFBF7] rounded-2xl p-6 space-y-3">
+                {project.location && (
+                  <div className="flex items-center gap-3">
+                    <HiLocationMarker className="text-luxury-gold text-lg flex-shrink-0" />
+                    <div>
+                      <span className="text-[8px] font-black text-gray-400 uppercase tracking-widest block">Location</span>
+                      <span className="text-sm font-extrabold text-charcoal">{project.location}</span>
+                    </div>
+                  </div>
+                )}
+                <div className="flex items-center gap-3">
+                  <HiCalendar className="text-luxury-gold text-lg flex-shrink-0" />
+                  <div>
+                    <span className="text-[8px] font-black text-gray-400 uppercase tracking-widest block">Project Completed</span>
+                    <span className="text-sm font-extrabold text-charcoal">
+                      {project.createdAt ? new Date(project.createdAt).toLocaleDateString(undefined, { year: 'numeric', month: 'long' }) : 'Recent'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+
       {/* Top Header Navigation */}
       <header className="sticky top-0 z-50 bg-[#FDFBF7]/90 backdrop-blur-md border-b border-charcoal/5 py-4 flex-shrink-0">
         <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
@@ -214,9 +285,15 @@ const ProjectDetails = () => {
             {/* Left Column: Large Square Client Image */}
             <div className="flex-shrink-0 flex items-center justify-center">
               {project.clientImage ? (
-                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border border-luxury-gold/30 shadow-sm">
+                <button 
+                  onClick={() => setShowClientModal(true)}
+                  className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border border-luxury-gold/30 shadow-sm hover:border-luxury-gold hover:scale-105 transition-all cursor-pointer group relative"
+                >
                   <img src={project.clientImage} alt={project.owner} className="w-full h-full object-cover" />
-                </div>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                    <span className="text-white text-xs font-black opacity-0 group-hover:opacity-100 transition-opacity">VIEW</span>
+                  </div>
+                </button>
               ) : (
                 <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-luxury-gold/10 border border-luxury-gold/30 flex items-center justify-center text-luxury-gold shadow-sm">
                   <HiUser className="text-4xl" />
