@@ -10,15 +10,21 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-4 mb-8">
               <div className="w-16 h-16 overflow-hidden rounded-2xl shadow-xl border border-white/10">
-                <img src="/logo.jpeg" alt="OAK Logo" className="w-full h-full object-cover" />
+                <img src="/oakinfra-logo.jpeg" alt="OakInfra Logo" className="w-full h-full object-cover" />
               </div>
-              <span className="text-2xl font-outfit font-black tracking-tighter uppercase text-white">
-                OAK<span className="text-luxury-gold text-sm ml-2">Constructions</span>
+              <span className="text-2xl font-outfit font-black tracking-tighter lowercase text-white">
+                oakinfra<span className="text-luxury-gold text-xs ml-2 uppercase">Construction & Infrastructure</span>
               </span>
             </div>
             <p className="text-slate-400 leading-relaxed mb-8 text-sm">
-              Designing Aesthetics & Ergonomics since 2010. Led by Er. Ovez Arif Kapshikar, delivering elite construction solutions.
+              Designing Aesthetics & Ergonomics since 2010. Led by Er. Ovez Arif Kapshikar, delivering elite construction solutions across Sangli, Miraj, and Maharashtra.
             </p>
+            
+            {/* SEO Keywords Section */}
+            <div className="text-slate-500 text-xs leading-relaxed mb-6 space-y-1">
+              <p className="font-semibold text-luxury-gold/80">Expert Services:</p>
+              <p>Civil Engineer in Sangli | Best Architect in Maharashtra | Construction Company Sangli Miraj | Residential & Commercial Builder | Hospital Construction | Interior Design Sangli | OakInfra</p>
+            </div>
             <div className="flex gap-4">
               {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map((Icon, i) => (
                 <a
@@ -48,11 +54,12 @@ const Footer = () => {
           <div>
             <h4 className="text-[10px] font-black mb-6 border-l-4 border-luxury-gold pl-4 uppercase tracking-[0.2em] text-white">Our Expertise</h4>
             <ul className="space-y-4 text-slate-400 text-sm">
-              <li><a href="#services" className="hover:text-luxury-gold transition-colors">Commercial</a></li>
-              <li><a href="#services" className="hover:text-luxury-gold transition-colors">Residential</a></li>
-              <li><a href="#services" className="hover:text-luxury-gold transition-colors">Architecture</a></li>
+              <li><a href="#services" className="hover:text-luxury-gold transition-colors">Commercial Construction</a></li>
+              <li><a href="#services" className="hover:text-luxury-gold transition-colors">Residential Buildings</a></li>
+              <li><a href="#services" className="hover:text-luxury-gold transition-colors">Architectural Design</a></li>
               <li><a href="#services" className="hover:text-luxury-gold transition-colors">Interior Design</a></li>
-              <li><a href="#services" className="hover:text-luxury-gold transition-colors">Renovation</a></li>
+              <li><a href="#services" className="hover:text-luxury-gold transition-colors">Hospital Construction</a></li>
+              <li><a href="#services" className="hover:text-luxury-gold transition-colors">Structural Engineering</a></li>
             </ul>
           </div>
 
@@ -62,7 +69,7 @@ const Footer = () => {
             <ul className="space-y-4 text-slate-400 text-sm">
               <li className="flex items-start gap-3">
                 <HiLocationMarker className="text-luxury-gold text-xl mt-1 shrink-0" />
-                <span>OAK Constructions,<br />Design & Execution Studio</span>
+                <span>OakInfra Construction & Infrastructure,<br />Sangli, Miraj, Maharashtra<br />Design & Execution Studio</span>
               </li>
               <li className="flex items-center gap-3">
                 <HiPhone className="text-luxury-gold text-xl shrink-0" />
@@ -73,12 +80,17 @@ const Footer = () => {
                 <span>oves15141@gmail.com</span>
               </li>
             </ul>
+            <div className="mt-6 pt-6 border-t border-white/5">
+              <p className="text-xs text-slate-500 leading-relaxed">
+                <span className="text-luxury-gold font-bold">Arif Kapshikar</span> - Certified Civil Engineer & Architect serving Sangli, Miraj & Maharashtra
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-[9px] uppercase tracking-[0.4em] font-black">
-          <p>© {new Date().getFullYear()} OAK Constructions. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} OakInfra Construction & Infrastructure. All Rights Reserved.</p>
           <a href="/admin/login" className="hover:text-luxury-gold transition-colors text-white/40">Admin Login</a>
         </div>
       </div>

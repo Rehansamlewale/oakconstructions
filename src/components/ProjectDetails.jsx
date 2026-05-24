@@ -179,11 +179,11 @@ const ProjectDetails = () => {
           {/* Logo on Left Side */}
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('/')}>
             <div className="w-10 h-10 overflow-hidden rounded-xl border border-luxury-gold/20">
-              <img src="/logo.jpeg" alt="OAK Logo" className="w-full h-full object-cover" />
+              <img src="/oakinfra-logo.jpeg" alt="OakInfra Logo" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col leading-none">
-              <span className="text-lg font-outfit font-black tracking-tighter uppercase text-luxury-navy">OAK</span>
-              <span className="text-[7px] font-black tracking-[0.2em] uppercase text-luxury-gold mt-0.5">Constructions</span>
+              <span className="text-lg font-outfit font-black tracking-tighter lowercase text-luxury-navy">oakinfra</span>
+              <span className="text-[7px] font-black tracking-[0.2em] uppercase text-luxury-gold mt-0.5">Construction & Infrastructure</span>
             </div>
           </div>
 

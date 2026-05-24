@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import { HelmetProvider } from 'react-helmet-async';
 
 // Components
 import Navbar from './components/Navbar';
@@ -15,6 +16,7 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollProgress from './components/ScrollProgress';
+import SEO from './components/SEO';
 
 // Admin Components
 import Login from './admin/Login';
@@ -40,14 +42,14 @@ const LoadingScreen = () => (
       className="flex items-center gap-4 mb-12"
     >
       <div className="w-32 h-32 overflow-hidden rounded-[2.5rem] shadow-2xl border-2 border-luxury-gold/30">
-        <img src="/logo.jpeg" alt="OAK Logo" className="w-full h-full object-cover" />
+        <img src="/oakinfra-logo.jpeg" alt="OakInfra Logo" className="w-full h-full object-cover" />
       </div>
       <div className="flex flex-col leading-none">
-        <span className="text-7xl font-outfit font-black tracking-tighter uppercase text-luxury-navy">
-          OAK
+        <span className="text-6xl font-outfit font-black tracking-tighter lowercase text-luxury-navy">
+          oakinfra
         </span>
-        <span className="text-sm font-black tracking-[0.4em] uppercase text-luxury-gold mt-2">
-          Constructions
+        <span className="text-xs font-black tracking-[0.3em] uppercase text-luxury-gold mt-2">
+          Construction & Infrastructure
         </span>
       </div>
     </motion.div>
@@ -76,6 +78,7 @@ const MainSite = () => {
 
   return (
     <div className="relative selection:bg-luxury-gold selection:text-white">
+      <SEO />
       <AnimatePresence>
         {loading && <LoadingScreen key="loader" />}
       </AnimatePresence>
@@ -116,7 +119,7 @@ const AdminLayout = ({ children }) => (
 
 function App() {
   return (
-    <>
+    <HelmetProvider>
       <Toaster position="top-right" />
       <Router>
         <Routes>
@@ -137,7 +140,7 @@ function App() {
           } />
         </Routes>
       </Router>
-    </>
+    </HelmetProvider>
   );
 }
 

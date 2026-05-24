@@ -42,14 +42,14 @@ const Navbar = () => {
             className="flex items-center gap-3 cursor-pointer"
           >
             <div className="w-16 h-16 overflow-hidden rounded-2xl shadow-xl border border-luxury-gold/20">
-              <img src="/logo.jpeg" alt="OAK Logo" className="w-full h-full object-cover" />
+              <img src="/oakinfra-logo.jpeg" alt="OakInfra Logo" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col leading-none">
-              <span className="text-2xl font-outfit font-black tracking-tighter uppercase text-luxury-navy">
-                OAK
+              <span className="text-2xl font-outfit font-black tracking-tighter lowercase text-luxury-navy">
+                oakinfra
               </span>
-              <span className="text-[10px] font-black tracking-[0.2em] uppercase text-luxury-gold mt-1">
-                Constructions
+              <span className="text-[8px] font-black tracking-[0.2em] uppercase text-luxury-gold mt-1">
+                Construction & Infrastructure
               </span>
             </div>
           </motion.div>

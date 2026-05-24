@@ -113,20 +113,6 @@ const Hero = () => {
                 <p className="text-[7px] lg:text-[8px] text-slate-500 font-bold">2025 Excellence Award</p>
               </motion.div>
 
-              <motion.div
-                animate={{ y: [0, 15, 0] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-6 -right-4 lg:bottom-10 lg:-right-6 glass-luxury p-3 lg:p-5 rounded-2xl z-20 w-40 lg:w-48 shadow-2xl border-white/80"
-              >
-                <div className="flex -space-x-2 lg:-space-x-3 mb-2 lg:mb-3">
-                  {[1, 2, 3, 4].map(i => (
-                    <img key={i} src={`https://i.pravatar.cc/100?u=${i}`} className="w-8 h-8 lg:w-9 lg:h-9 rounded-full border-[2px] lg:border-3 border-white" />
-                  ))}
-                </div>
-                <h4 className="font-black text-[9px] lg:text-[10px] text-charcoal uppercase tracking-widest mb-0.5">150+ Clients</h4>
-                <p className="text-[7px] lg:text-[8px] text-slate-500 font-bold">Trusted by global leaders</p>
-              </motion.div>
-
               {/* Experience Badge */}
               <motion.div
                 initial={{ rotate: -90, opacity: 0 }}
