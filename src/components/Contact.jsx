@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { HiMail, HiPhone, HiLocationMarker } from 'react-icons/hi';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const contactItems = [
   { icon: HiPhone, title: 'Direct Line', val: '+91 7020624800' },
@@ -139,9 +140,10 @@ ${phone} _We will get back to you shortly!_`;
               type="submit"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full bg-charcoal text-white font-black py-3.5 sm:py-4 rounded-xl sm:rounded-2xl uppercase tracking-[0.3em] text-[10px] transition-all shadow-xl shadow-charcoal/20 cursor-pointer"
+              className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white font-black py-3.5 sm:py-4 rounded-xl sm:rounded-2xl uppercase tracking-[0.3em] text-[10px] transition-all shadow-xl shadow-[#25D366]/20 cursor-pointer flex items-center justify-center gap-2"
             >
-              Initiate Conversation
+              <FaWhatsapp className="text-lg" />
+              Send Enquiry on WhatsApp
             </motion.button>
           </form>
         </motion.div>
